@@ -1,0 +1,33 @@
+@font-face {
+    font-family: handwritten;
+    src: url(fonts/Pacifico-Regular.ttf);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: #3aafa9;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.main {
+    text-align: center;
+    font-family: handwritten;
+    background-color: #def2f1;
+    font-size: 150%;
+    height: 50vh;
+    box-sizing: border-box;
+}
+
+.custom-font {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
