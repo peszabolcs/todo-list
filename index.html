@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="pics/greenTick.ico" />
+  </head>
+  <body>
+    <!-- Header -->
     <div class="header">
-        <header class="toDoText">
-            <h1>Tasks to do</h1>
-        </header>
+      <header class="toDoText">
+        <h1>Tasks to do</h1>
+      </header>
+    </div>
 
-        <div>
-            <form>
-                <input type="text">
-                <button type="submit">Add Task</button>
-            </form>
-        </div>
+    <!-- MainContainer -->
+    <div class="mainContainer">
+      <div class="formContainer" id="formContainer">
+        <form onsubmit="return false;" id="form">
+          <input type="text" id="input" onkeyup="checkEnterKey(event)" />
+          <button id="mainButton" type="button" onclick="addTask()">
+            add task
+          </button>
+        </form>
+        <!-- Tasks List -->
+      </div>
     </div>
 
     <script src="main.js"></script>
-</body>
+  </body>
 </html>

@@ -1,46 +1,102 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Pacifico', cursive;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Pacifico", cursive;
 }
 
 body {
-    background-color:#faf0e6;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
+  background-color: #faf0e6;
 }
 
 .toDoText {
-    text-align: center;
-    background-color: #eed9c4;
-    font-size: 150%;
-    width: 100%;
-    box-sizing: border-box;
+  text-align: center;
+  background-color: #eed9c4;
+  font-size: 150%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+.header,
+.mainContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-button, input {
-    color: black;
-    border: 0.6px solid black;
-    margin-top: 1rem;
-    padding: 0.5rem;
-    border: none;
-    background: #d9b99b;
-    font-size: 2rem;
-    border-radius: 7px;
+.formContainer {
+  max-width: 800px;
 }
 
-button:hover {
-    color: #17252a;
-    background: #eed9c4;
+#form {
+  display: flex;
+}
+
+#mainButton {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+#input {
+  flex-grow: 3;
+}
+
+#mainButton,
+#input {
+  color: black;
+  border: 1px solid black;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  background: #d9b99b;
+  font-size: 2rem;
+  border-radius: 7px;
+}
+
+#mainButton:hover {
+  color: #17252a;
+  background: #eed9c4;
+}
+
+.taskList {
+  border: 2.5px solid black;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  font-size: 2em;
+  margin-bottom: 15px;
+  background-color: #e4d5b7;
+  padding-left: 15px;
+}
+
+#removeBtnCont {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: auto;
+  font-size: 2em;
+  margin-right: 30px;
+  padding-left: 30px;
+  align-items: center;
+}
+
+.removeBtn {
+  display: flex;
+  align-items: center;
+  background: green;
+  padding: 0.5em;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.removeBtn:hover {
+  background-color: greenyellow;
+}
+
+#whiteCross {
+  width: 20px;
+  height: 20px;
 }
