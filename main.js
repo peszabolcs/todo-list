@@ -1,11 +1,3 @@
-//localStorage
-const savedTaskList = document.querySelector(".savedTasks");
-const storedTasks = localStorage.getItem("savedTasks");
-
-if (storedTasks) {
-  // savedTaskList = storedTasks;
-}
-
 // addTask function
 let taskDivNumber = 1;
 
@@ -30,8 +22,7 @@ const addTask = () => {
     .getElementById("savedTasks")
     .insertAdjacentHTML("beforeend", htmlString);
   taskDivNumber++;
-  // savedTaskList.textContent = document.querySelector(".savedTasks");
-  console.log(savedTaskList);
+  document.getElementById("input").value = "";
   saveToLocalStorage();
 };
 
@@ -39,7 +30,6 @@ const addTask = () => {
 const checkEnterKey = (event) => {
   if (event.key == "Enter") {
     addTask();
-    document.getElementById("input").value = "";
   }
 };
 
@@ -77,5 +67,21 @@ const removeTask = (taskNumber) => {
 
 // localstorage
 const saveToLocalStorage = () => {
-  localStorage.setItem("savedTasks", savedTaskList);
+  const taskList = document.querySelector(".savedTasks");
+  if (taskList) {
+    //converting the div to a string representation using outerHTML
+    taskListAsString = taskList.outerHTML;
+    localStorage.setItem("savedTasks", taskListAsString);
+  }
 };
+
+//load the saved div from localstorage
+const localstorageOnLoad = () => {
+  const savedTaskListAsString = localStorage.getItem("savedTasks");
+  if (savedTaskListAsString) {
+    document
+      .querySelector(".savedTasks")
+      .insertAdjacentHTML("beforeend", savedTaskListAsString);
+  }
+};
+window.addEventListener("load", localstorageOnLoad());
