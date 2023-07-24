@@ -1,6 +1,14 @@
-let taskDivNumber = 1;
+//localStorage
+const savedTaskList = document.querySelector(".savedTasks");
+const storedTasks = localStorage.getItem("savedTasks");
+
+if (storedTasks) {
+  // savedTaskList = storedTasks;
+}
 
 // addTask function
+let taskDivNumber = 1;
+
 const addTask = () => {
   let newTask = document.getElementById("input").value;
   const htmlString =
@@ -19,9 +27,12 @@ const addTask = () => {
     "</div>" +
     "</div>";
   document
-    .getElementById("formContainer")
+    .getElementById("savedTasks")
     .insertAdjacentHTML("beforeend", htmlString);
   taskDivNumber++;
+  // savedTaskList.textContent = document.querySelector(".savedTasks");
+  console.log(savedTaskList);
+  saveToLocalStorage();
 };
 
 //if the enter gets pressed, it'll work same as the button click
@@ -60,4 +71,11 @@ const removeTask = (taskNumber) => {
   if (removedTask) {
     removedTask.remove();
   }
+  localStorage.removeItem("savedTasks");
+  saveToLocalStorage();
+};
+
+// localstorage
+const saveToLocalStorage = () => {
+  localStorage.setItem("savedTasks", savedTaskList);
 };
