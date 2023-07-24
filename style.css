@@ -7,7 +7,14 @@
   font-family: "Pacifico", cursive;
 }
 
+html,
 body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
   background-color: #faf0e6;
 }
 
@@ -27,9 +34,10 @@ body {
   align-items: center;
 }
 
-/* .formContainer {
-  max-width: 800px;
-} */
+.mainContainer {
+  flex: 1 0 auto;
+  align-items: flex-start;
+}
 
 #form {
   display: flex;
@@ -99,4 +107,12 @@ body {
 #whiteCross {
   width: 20px;
   height: 20px;
+}
+
+footer {
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eed9c4;
 }
